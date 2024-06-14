@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --eerie-black-1: hsl(240, 2%, 13%);
+    /* --eerie-black-2: hsl(240, 2%, 12%); */
+    --eerie-black-2: hsl(240, 4%, 5%);
+
+    --smoky-black: hsl(0, 0%, 0%);
+    --white-1: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 98%);
+    --border-gradient-onyx: linear-gradient(
+      to bottom right,
+      hsl(0, 0%, 25%) 0%,
+      hsla(0, 0%, 25%, 0) 50%
+    );
+    --border-gradient-bright-onyx: linear-gradient(
+      to top,
+      hsl(0, 1%, 55%) 10%,
+      hsla(0, 0%, 25%, 0) 50%
+    );
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+
+  @layer utilities {
+    .border-jet {
+      border-color: var(--jet);
+    }
+
+    .flex-2 {
+      flex: 2;
+    }
+    .bg-jet {
+      background-color: var(--jet);
+    }
+    .bg-onyx {
+      background-color: var(--onyx);
+    }
+    .bg-eerie-black-2 {
+      background-color: var(--eerie-black-2);
+    }
+    .border-purple {
+      border: 1px solid var(--jet);
+    }
+    .font-gray {
+      color: var(--eerie-black-2);
+    }
+
+    .icon-box {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      width: 50px;
+      height: 45px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: var(--shadow-1);
+      border: 1px solid var(--onyx);
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .social-media-link-box {
+      position: relative;
+      background: var(--border-gradient-bright-onyx);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: var(--shadow-1);
+      border: 1px solid var(--onyx);
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .dotted-background {
+      background-image: radial-gradient(#545252d5 5%, #0000001f 15%);
+      background-color: #000;
+      position: fixed !important;
+      background-size: 20px 20px;
+    }
+  }
+}
